@@ -1,0 +1,41 @@
+header{
+    background-color: #212121;
+    text-align: center;
+    color: #fff;
+    word-spacing: 15px;
+}
+
+.header__list{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    list-style: none;
+    word-spacing: 13px;
+
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+.header__item{
+    text-decoration: none;
+    font-size: 30px;
+    color: #fff;
+    margin-left: 10px;
+
+
+}
+
+
+
+.container{
+    text-align: center;
+    width: 1120px;
+    margin: 0 auto;
+}
+
+.active-link{
+    color: #49a0ff;
+}
