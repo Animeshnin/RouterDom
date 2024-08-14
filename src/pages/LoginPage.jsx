@@ -9,6 +9,7 @@ function LoginPage() {
 
     const fromPage = location.state?.from?.pathname || '/';
 
+    console.log(location)
 
     const handleSignIn = (event) => {
         event.preventDefault()

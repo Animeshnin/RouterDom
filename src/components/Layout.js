@@ -1,13 +1,12 @@
 import React from 'react';
 import {NavLink, Outlet} from 'react-router-dom';
 
-const setActive = ({isActive, isPending}) =>
+const setActive = ({isActive}) =>
     [
-        isPending ? '' : "header__item",
-        isActive ? "active-link" : "",
+        isActive ? "header__item active-link" : "header__item",
     ].join(' ')
 
-function Layout(props) {
+function Layout() {
     return (
         <>
             <header>

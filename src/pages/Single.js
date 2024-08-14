@@ -1,21 +1,17 @@
 import React from 'react';
-import {useParams, useNavigate} from "react-router-dom";
-import {useState, useEffect} from "react";
+import { useNavigate, useLoaderData} from "react-router-dom";
 
-function Single(props) {
-    const [blog, setBlog] = useState()
+function Single() {
+
+    const {blog, id}  = useLoaderData()
+
     const navigate = useNavigate();
-    const {id}  = useParams();
 
     const goBack = () => navigate(-1)
     // не записывает в историю переадресацию на главную страницу
     // const goHome = () => navigate('/', {replace: true});
 
-    useEffect(() => {
-        fetch(`http://jsonplaceholder.typicode.com/posts/${id}`)
-            .then(res => res.json())
-            .then(data => setBlog(data))
-    }, [id])
+
 
     return (
         <div>
@@ -28,6 +24,14 @@ function Single(props) {
             )}
         </div>
     );
+}
+
+export const singleLoader = async ({req, params}) => {
+    const id = params.id
+    const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
+    const blog = await res.json()
+
+    return {blog, id}
 }
 
 export default Single;
